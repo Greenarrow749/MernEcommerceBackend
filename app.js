@@ -24,10 +24,10 @@ const userRoutes = require("./routes/userRoutes");
 const orderRoutes = require("./routes/orderRoute");
 const paymentRoutes = require("./routes/paymentRoute");
 
-app.use("/api/v1", productRoutes);
-app.use("/api/v1", userRoutes);
-app.use("/api/v1", orderRoutes);
-app.use("/api/v1", paymentRoutes);
+app.use("https://mernecommercebackend.onrender.com/api/v1", productRoutes);
+app.use("https://mernecommercebackend.onrender.com/api/v1", userRoutes);
+app.use("https://mernecommercebackend.onrender.com/api/v1", orderRoutes);
+app.use("https://mernecommercebackend.onrender.com/api/v1", paymentRoutes);
 
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 
