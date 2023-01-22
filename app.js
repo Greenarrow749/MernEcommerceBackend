@@ -3,10 +3,17 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
 const path = require("path");
+const cors = require("cors");
 
 const errorMiddleware = require("./middleware/error");
 
 const app = express();
+
+app.use(cors({
+  credentials: true,
+  origin: ["https://glistening-tanuki-27a292.netlify.app/"],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
+}));
 
 //config
 if (process.env.NODE_ENV !== "PRODUCTION") {
