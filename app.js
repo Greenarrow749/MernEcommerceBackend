@@ -11,9 +11,17 @@ const app = express();
 
 app.use(cors({
   credentials: true,
-  origin: ["https://glistening-tanuki-27a292.netlify.app/"],
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+  optionSuccessStatus:200
 }));
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', true);
+  res.header('Access-Control-Allow-Credentials', true);
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  next();
+});
 
 //config
 if (process.env.NODE_ENV !== "PRODUCTION") {

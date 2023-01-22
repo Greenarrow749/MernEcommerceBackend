@@ -1,7 +1,6 @@
 const app = require("./app");
 // const dotenv = require("dotenv");
 const cloudinary = require("cloudinary");
-const cors = require("cors");
 
 const connectDatabase = require("./config/database");
 
