@@ -20,6 +20,7 @@ app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Headers', true);
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.send("Backend api is running...");
   next();
 });
 
